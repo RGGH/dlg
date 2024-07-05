@@ -1,1 +1,0 @@
-{"name":"ba","email":"a@naa.cc","country":"England"}

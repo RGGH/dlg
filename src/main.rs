@@ -17,7 +17,7 @@ fn main() {
         .interact_text()
         .unwrap();
 
-    println!("Hello {}!", &name);
+    println!("Hello {}!", name);
 
     let email: String = Input::with_theme(&ColorfulTheme::default())
         .with_prompt("Your email")
@@ -43,7 +43,7 @@ fn main() {
         .interact_text()
         .unwrap();
 
-    println!("Country : {}", &country);
+    println!("Country : {}", country);
 
     let user_data = UserInfo {
         name,
@@ -52,6 +52,5 @@ fn main() {
     };
     let user_data_json = serde_json::to_vec(&user_data).unwrap();
     let mut f = File::create("res.txt").unwrap();
-
     let _ = f.write_all(&user_data_json);
 }
