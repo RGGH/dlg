@@ -50,7 +50,8 @@ fn main() {
         email,
         country,
     };
-    let user_data_json = serde_json::to_vec(&user_data).unwrap();
+
+    let user_data_json = serde_json::to_string(&user_data).unwrap();
     let mut f = File::create("res.txt").unwrap();
-    let _ = f.write_all(&user_data_json);
+    f.write_all(user_data_json.as_bytes()).unwrap();
 }
